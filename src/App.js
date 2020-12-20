@@ -4,6 +4,17 @@ import './App.css';
 
 class App extends Component {
   render() {
+    let subscriber = [
+      {
+        id:1,
+        name: 'Shivang',
+        phone: '9999999999'
+      }, {
+        id:2,
+        name: 'Simon',
+        phone: '8888888888'
+      }
+    ]
     return (
       <div>
         {/* <div id="module">
@@ -16,6 +27,16 @@ class App extends Component {
             <div className='nameText'>Name</div>
             <div className='phoneText'>Phone</div>
           </div>
+          {
+            subscriber.map(sub => {
+              return (
+                <div key={sub.id} className='gridView'>
+                  <div>{sub.name}</div>
+                  <div>{sub.phone}</div>
+                </div>
+              )
+            })
+          }
         </div>
 
 
