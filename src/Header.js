@@ -1,8 +1,16 @@
 import React from 'react';
+import './Header.css';
 
 const Header = function(props){
+  // var headStyle = {
+  //   textAlign:'center',
+  //   padding:20,
+  //   backgroundColor:'#000',
+  //   color:'#fff',
+  //   textTransform:'uppercase'
+  // }
     return(
-        <div style={{textAlign:'center',padding:20,backgroundColor:'#000',color:'#fff',textTransform:'uppercase'}}>
+        <div className='header'>
           Phone directory
           {/* <p>{props.children}</p> */}
         </div>
