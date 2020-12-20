@@ -8,8 +8,6 @@
     width: 80px;
     height:40px;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 .add{
     background-color: #68c968;
@@ -25,5 +23,9 @@
     font-weight: 600;
     text-transform: uppercase;
     color:#808080;
+}
+.delete{
+    background-color: rgb(240, 94, 94);
+    color: #000;
 }
 

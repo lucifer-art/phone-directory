@@ -22,7 +22,7 @@ class App extends Component {
         </div> */}
         <Header>Hello World!</Header>
         <div className='component-body-container'>
-          <button className='cust-btn add'>Add</button>
+          <button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button>
           <div className='gridView'>
             <div className='nameText'>Name</div>
             <div className='phoneText'>Phone</div>
@@ -33,6 +33,7 @@ class App extends Component {
                 <div key={sub.id} className='gridView'>
                   <div>{sub.name}</div>
                   <div>{sub.phone}</div>
+                  <div><button className='cust-btn delete'>Delete</button></div>
                 </div>
               )
             })
