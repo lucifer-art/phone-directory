@@ -1,25 +1,62 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Header from './Header';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Editor Test React<code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  deleteHandler = function(msg) {
+    alert(msg);
+  }
+  render() {
+    let subscriber = [
+      {
+        id:1,
+        name: 'Shivang',
+        phone: '9999999999'
+      }, {
+        id:2,
+        name: 'Simon',
+        phone: '8888888888'
+      }
+    ]
+    return (
+      <div>
+        {/* <div id="module">
+          <p>ReactJS</p>
+        </div> */}
+        <Header heading='Phone Directory'></Header>
+        <div className='component-body-container'>
+          <button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button>
+          <div className='gridView'>
+            <div className='nameText'>Name</div>
+            <div className='phoneText'>Phone</div>
+          </div>
+          {
+            subscriber.map(sub => {
+              return (
+                <div key={sub.id} className='gridView'>
+                  <div>{sub.name}</div>
+                  <div>{sub.phone}</div>
+                  <div><button className='cust-btn delete' onClick={this.deleteHandler.bind(this,sub.name)}>Delete</button></div>
+                </div>
+              )
+            })
+          }
+        </div>
+
+
+      </div>
+
+      // React.createElement("div",{id:"module"},
+      // React.createElement('p',null,'ReactJS')
+    );
+  }
 }
+// function App() {
+//   return (
+//     <div>
+//       Phone directory
+//     </div>
+//   );
+// }
 
 export default App;
