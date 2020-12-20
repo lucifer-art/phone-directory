@@ -1,0 +1,21 @@
+
+.add{
+    background-color: #68c968;
+    color: #fff;
+}
+.gridView{
+    display: grid;
+    grid-template-columns: 30% 40% auto;
+    margin-bottom: 10px;
+}
+.phoneText, .nameText{
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:#808080;
+}
+.delete{
+    background-color: rgb(240, 94, 94);
+    color: #000;
+}
+
