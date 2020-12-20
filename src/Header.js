@@ -11,7 +11,7 @@ const Header = function(props){
   // }
     return(
         <div className='header'>
-          Phone directory
+          {props.heading}
           {/* <p>{props.children}</p> */}
         </div>
     )

@@ -3,6 +3,9 @@ import Header from './Header';
 import './App.css';
 
 class App extends Component {
+  deleteHandler = function(msg) {
+    alert(msg);
+  }
   render() {
     let subscriber = [
       {
@@ -20,7 +23,7 @@ class App extends Component {
         {/* <div id="module">
           <p>ReactJS</p>
         </div> */}
-        <Header>Hello World!</Header>
+        <Header heading='Phone Directory'></Header>
         <div className='component-body-container'>
           <button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button>
           <div className='gridView'>
@@ -33,7 +36,7 @@ class App extends Component {
                 <div key={sub.id} className='gridView'>
                   <div>{sub.name}</div>
                   <div>{sub.phone}</div>
-                  <div><button className='cust-btn delete'>Delete</button></div>
+                  <div><button className='cust-btn delete' onClick={this.deleteHandler.bind(this,sub.name)}>Delete</button></div>
                 </div>
               )
             })
