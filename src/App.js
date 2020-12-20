@@ -5,7 +5,7 @@ class App extends Component{
   render(){
     return(
       <div>
-        <Header></Header>
+        <Header>Hello World!</Header>
         <button>Add</button>
         <div>
           <span>Name</span><br />

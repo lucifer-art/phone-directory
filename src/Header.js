@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Header = function(){
+const Header = function(props){
     return(
-        <div>
+        <div style={{textAlign:'center',padding:20,backgroundColor:'#000',color:'#fff',textTransform:'uppercase'}}>
           Phone directory
+          {/* <p>{props.children}</p> */}
         </div>
     )
 }
