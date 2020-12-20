@@ -1,0 +1,29 @@
+.component-body-container {
+    padding: 20px;
+}
+.cust-btn{
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    width: 80px;
+    height:40px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.add{
+    background-color: #68c968;
+    color: #fff;
+}
+.gridView{
+    display: grid;
+    grid-template-columns: 30% 40% auto;
+    margin-bottom: 10px;
+}
+.phoneText, .nameText{
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:#808080;
+}
+
