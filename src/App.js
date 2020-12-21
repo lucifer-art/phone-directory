@@ -6,12 +6,7 @@ class App extends Component {
   deleteHandler = function(msg) {
     alert(msg);
   }
-  constructor(){
-    super();
-    this.state = {
-      subscriberListtoShow: []
-    }
-  }
+  
   render() {
     // let subscriber = [
     //   {
@@ -24,7 +19,7 @@ class App extends Component {
     //     phone: '8888888888'
     //   }
     // ]
-    
+    console.log("Render called");
     return (
       <div>
         {/* <div id="module">
@@ -38,7 +33,7 @@ class App extends Component {
             <div className='phoneText'>Phone</div>
           </div>
           {
-            this.state.subscriberListtoShow.map(sub => {
+            this.props.subscriber.map(sub => {
               return (
                 <div key={sub.id} className='gridView'>
                   <div>{sub.name}</div>
