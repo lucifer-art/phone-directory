@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   deleteHandler = function(msg) {
@@ -19,7 +20,6 @@ class App extends Component {
     //     phone: '8888888888'
     //   }
     // ]
-    console.log("Render called");
     return (
       <div>
         {/* <div id="module">
@@ -27,13 +27,13 @@ class App extends Component {
         </div> */}
         <Header heading='Phone Directory'></Header>
         <div className='component-body-container'>
-          <button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button>
+          <Link to='/add'><button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button></Link>
           <div className='gridView'>
             <div className='nameText'>Name</div>
             <div className='phoneText'>Phone</div>
           </div>
           {
-            this.props.subscriber.map(sub => {
+            this.props.subscriberList.map(sub => {
               return (
                 <div key={sub.id} className='gridView'>
                   <div>{sub.name}</div>
