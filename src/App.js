@@ -4,8 +4,8 @@ import './App.css';
 import { Link } from 'react-router-dom';
 
 class App extends Component {
-  deleteHandler = function(msg) {
-    alert(msg);
+  onDeleteClick = (subscriberId,index) =>{
+    this.props.deleteSubscriberHandler(subscriberId,index);
   }
   
   render() {
@@ -33,12 +33,12 @@ class App extends Component {
             <div className='phoneText'>Phone</div>
           </div>
           {
-            this.props.subscriberList.map(sub => {
+            this.props.subscriberList.map((sub,index) => {
               return (
                 <div key={sub.id} className='gridView'>
                   <div>{sub.name}</div>
                   <div>{sub.phone}</div>
-                  <div><button className='cust-btn delete' onClick={this.deleteHandler.bind(this,sub.name)}>Delete</button></div>
+                  <div><button className='cust-btn delete' onClick={this.onDeleteClick.bind(this,sub.id,index)}>Delete</button></div>
                 </div>
               )
             })
