@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
-  deleteHandler = function(msg) {
-    alert(msg);
+  onDeleteClick = (subscriberId,index) =>{
+    this.props.deleteSubscriberHandler(subscriberId,index);
   }
+  
   render() {
-    let subscriber = [
-      {
-        id:1,
-        name: 'Shivang',
-        phone: '9999999999'
-      }, {
-        id:2,
-        name: 'Simon',
-        phone: '8888888888'
-      }
-    ]
+    // let subscriber = [
+    //   {
+    //     id:1,
+    //     name: 'Shivang',
+    //     phone: '9999999999'
+    //   }, {
+    //     id:2,
+    //     name: 'Simon',
+    //     phone: '8888888888'
+    //   }
+    // ]
     return (
       <div>
         {/* <div id="module">
@@ -25,18 +27,18 @@ class App extends Component {
         </div> */}
         <Header heading='Phone Directory'></Header>
         <div className='component-body-container'>
-          <button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button>
+          <Link to='/add'><button className='cust-btn add' style={{marginBottom:'20px'}}>Add</button></Link>
           <div className='gridView'>
             <div className='nameText'>Name</div>
             <div className='phoneText'>Phone</div>
           </div>
           {
-            subscriber.map(sub => {
+            this.props.subscriberList.map((sub,index) => {
               return (
                 <div key={sub.id} className='gridView'>
                   <div>{sub.name}</div>
                   <div>{sub.phone}</div>
-                  <div><button className='cust-btn delete' onClick={this.deleteHandler.bind(this,sub.name)}>Delete</button></div>
+                  <div><button className='cust-btn delete' onClick={this.onDeleteClick.bind(this,sub.id,index)}>Delete</button></div>
                 </div>
               )
             })
